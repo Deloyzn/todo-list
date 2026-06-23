@@ -8,9 +8,6 @@ export function Header() {
                 <div className="header-content">
                     <h1 className="header-title">Мои задачи</h1>
                     <div className="header-actions">
-                        <Link to="/auth" className="btn btn--text">
-                            <span>👤</span> Профиль
-                        </Link>
                         <Link to="/auth" className="btn btn--text btn--danger">
                             <span>🚪</span> Выход
                         </Link>

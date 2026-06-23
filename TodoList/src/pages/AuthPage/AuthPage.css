@@ -61,6 +61,10 @@
   letter-spacing: -0.5px;
 }
 
+.auth-form {
+animation: 0.4s ease 0s 1 normal none running slideInFromRight;
+}
+
 /* Tabs */
 .tabs {
   display: flex;
@@ -103,10 +107,6 @@
 
 .form-container {
   width: 100%;
-}
-
-.auth-form {
-  animation: slideInForm 0.4s ease;
 }
 
 @keyframes slideInForm {
@@ -189,11 +189,17 @@
   transition: var(--transition);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none
 }
 
 .btn--primary {
   background: var(--primary-color);
   color: white;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none
 }
 
 .btn--primary:hover {
@@ -209,6 +215,9 @@
 .btn--full {
   box-sizing: border-box;
   width: 100%;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none
 }
 
 @media (max-width: 480px) {
@@ -227,5 +236,8 @@
 
   .btn {
     padding: 10px 16px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none
   }
 }

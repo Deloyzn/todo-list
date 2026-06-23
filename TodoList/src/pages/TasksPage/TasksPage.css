@@ -23,6 +23,7 @@
   background: var(--bg-light);
   display: flex;
   flex-direction: column;
+  animation: 0.5s ease 0s 1 normal none running pageSlideInLeft;
 }
 
 @keyframes pageSlideInLeft {
@@ -129,6 +130,7 @@
 
 .tasks-wrapper {
   overflow: hidden;
+  animation: slideInFromLeft 0.3s ease;
 }
 
 /* Tasks Header */
