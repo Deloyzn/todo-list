@@ -59,24 +59,6 @@ export function TasksPage() {
                 </li>
               </ul>
             </div>
-
-            <div className="nav-section">
-              <h4 className="nav-title">Фильтр</h4>
-              <ul className="nav-list">
-                <li className="nav-item">
-                  <a href="#today" className="nav-link">
-                    <span className="nav-icon">🕐</span>
-                    На сегодня
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="#week" className="nav-link">
-                    <span className="nav-icon">📅</span>
-                    На неделю
-                  </a>
-                </li>
-              </ul>
-            </div>
           </nav>
         </aside>
       </main>

@@ -2,7 +2,8 @@
 :root {
   --primary-color: #4f46e5;
   --primary-hover: #4338ca;
-  --secondary-color: #6366f1;
+  --secondary-color: #6b6b6b;
+  --secondary-hover: #555555;
   --success-color: #10b981;
   --danger-color: #ef4444;
   --warning-color: #f59e0b;
@@ -317,7 +318,7 @@
 
 .empty-icon {
   font-size: 64px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .empty-title {
@@ -423,8 +424,19 @@
   color: white;
 }
 
+.btn--secondary {
+  background: var(--secondary-color);
+  color: white;
+}
+
 .btn--primary:hover {
   background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn--secondary:hover {
+  background: var(--secondary-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 }
@@ -522,4 +534,27 @@
   .sidebar {
     grid-template-columns: 1fr;
   }
+}
+
+.form-textarea {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit; /* Чтобы шрифт не сбрасывался на дефолтный системный */
+  font-size: 0.95rem;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #007bff; /* Твой основной цвет */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.form-textarea:disabled {
+  background-color: #f5f5f5;
+  color: #8c8c8c;
+  cursor: not-allowed;
 }

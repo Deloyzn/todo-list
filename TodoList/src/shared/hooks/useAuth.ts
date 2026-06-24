@@ -2,6 +2,11 @@ import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '@/shared/lib/supabase' // Проверь, чтобы этот путь был правильным в твоем проекте
 
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,6}$/;
+  return emailRegex.test(email);
+};
+
 export function useAuth() {
   const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState<'login' | 'register'>('login')
@@ -30,6 +35,10 @@ export function useAuth() {
     e.preventDefault()
     setErrorMessage(null)
 
+    if (!validateEmail(email.trim())) {
+      setErrorMessage('Пожалуйста, введите корректный email адрес (например, name@mail.ru)');
+      return; // Прерываем регистрацию
+    }
     if (!email.trim() || !password.trim()) {
       setErrorMessage('Пожалуйста, заполните все поля.')
       return
@@ -61,6 +70,10 @@ export function useAuth() {
     e.preventDefault()
     setErrorMessage(null)
 
+    if (!validateEmail(email.trim())) {
+      setErrorMessage('Пожалуйста, введите корректный email адрес (например, name@mail.ru)');
+      return; // Прерываем регистрацию
+    }
     if (!email.trim() || !password.trim() || !confirmPassword.trim()) {
       setErrorMessage('Пожалуйста, заполните все обязательные поля.')
       return
@@ -78,12 +91,7 @@ export function useAuth() {
       setLoading(true)
       const { data, error } = await supabase.auth.signUp({
         email: email.trim(),
-        password: password,
-        options: {
-          data: {
-            display_name: name.trim() || undefined
-          }
-        }
+        password: password
       })
 
       if (error) throw error

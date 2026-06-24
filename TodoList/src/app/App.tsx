@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { AuthPage, TasksPage } from '../pages'
+import { AuthPage, TasksPage } from '@/pages/index'
 import { Layout } from '@/widgets/layout'
 
 function App() {
